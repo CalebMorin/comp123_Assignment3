@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group1_comp123_Assignment3
 {
-    class Program
+    class Tweets
     {
         static void Main(string[] args)
         {
