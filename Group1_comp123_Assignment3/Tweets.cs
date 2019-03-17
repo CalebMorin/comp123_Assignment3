@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using static System.Console;
 
 namespace Group1_comp123_Assignment3
 {
@@ -22,7 +24,11 @@ namespace Group1_comp123_Assignment3
 
         public Tweet(string from, string to, string message, string hashtag)
         {
-
+            //1.7 a. goes here. This line is (I think) supposed to make the tweet[] object exist. Which is why all the tweet[] have red underlines.
+            //1.7 b:
+            Id = currentId;
+            //1.7 c:
+            currentId++;
         }
         public override string ToString()
         {
@@ -30,29 +36,68 @@ namespace Group1_comp123_Assignment3
         }
         public static Tweet Parse(string line)
         {
-            
+            //1.9 a:
+
+            //1.9 d:
+            try
+            {
+                //1.9 b:
+                Tweet();
+                //1.9 c:
+            }
+            catch
+            {
+
+            }
         }
     }
     class TweetManager
     {
-        private static Tweet[] tweets;
+        private static Tweet[] tweets;//see comment for 1.7 a.
         private static string fileName;
 
         static TweetManager()
         {
-            
+            //2.3 a:
+            Tweet[] tweets = new Tweet[29];//I got the array size from the Tweets file Aderson gave us. I added the "this line is invalid" lines to the total.
+            //2.3 b:
+            string filename;
+            filename = "Tweets.txt";
+            if (File.Exists(filename))
+            {
+                string[] lines = File.ReadAllLines(@"C:\Users\alpha\source\repos\Tweets");
+            }
+            else
+            {
+                WriteLine("File does not exist.");
+            }
+            //2.3 c:
+            foreach (string element in Tweet[])//iv
+            {
+                string line;//i
+                line = //one line from the Tweet array; //ii
+                Parse(line);//iii
+            }
         }
         public static void ShowAll()
         {
-
+            //2.4 a: (This is like the only block I got with no problems.)
+            string filename = @"C:\Users\alpha\source\repos\Tweets";
+            WriteLine("{0}", filename);
         }
         public static void ShowAll(string hashtag)
         {
-
+            //2.5
+            //Get the seperated file information from 2.3 or 1.9 or something
+            WriteLine("{0}"/*All the tweets with a hashtag matching the argument*/);
         }
         public static void ConvertToJson()
         {
-
+            FileStream outFile = new
+                FileStream("tweets.json", FileMode.Create);
+            //The rest of this fuckin block
+            //i'm so goddamn tired
+            //fuck it im pushing this
         }
     }
 }
