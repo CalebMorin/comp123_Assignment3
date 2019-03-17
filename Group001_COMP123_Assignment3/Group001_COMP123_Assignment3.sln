@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetManager", "ConsoleApp1\TweetManager.csproj", "{262EA33C-F8C5-4C39-B8D1-136D51811087}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweet", "Tweet\Tweet.csproj", "{C8D850B8-891B-4731-80CD-E634705DC7BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{262EA33C-F8C5-4C39-B8D1-136D51811087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262EA33C-F8C5-4C39-B8D1-136D51811087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262EA33C-F8C5-4C39-B8D1-136D51811087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262EA33C-F8C5-4C39-B8D1-136D51811087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D850B8-891B-4731-80CD-E634705DC7BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D850B8-891B-4731-80CD-E634705DC7BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D850B8-891B-4731-80CD-E634705DC7BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D850B8-891B-4731-80CD-E634705DC7BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30243DD2-089F-4114-87E5-D37720478569}
+	EndGlobalSection
+EndGlobal
