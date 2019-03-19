@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
+using System.Runtime;
 
 /* Okay, so I was looking over your version and at the assignment, and I think he wants us to have the Tweet class and TweetManager class separated, where the TweetManager class
  * is with the Program class. Hopefully I was able to put it in a way to make it easy for you to read. (Formatting is not my forte)
  * So far, I've only reorganized the classes so that it fits the assignment requirements, I'm still working on the other parts. Ill push this for now though.
  */
-namespace Tweet
+namespace Tweeting
 {
     public class Tweet
     {
@@ -35,13 +36,29 @@ namespace Tweet
         public override string ToString()
         {
             
+            return "";
         }
         //
         public static Tweet Parse(string line)
         {
-            Tweet[] tweets = new Tweet[29];
+            Tweet newTweet = new Tweet("", "", "", "");
+            string[] testTweet;
 
-           
+            try
+            {
+                testTweet = line.Split(new char[] { '\t' });
+                newTweet = new Tweet(from: testTweet[0], to: testTweet[1], message: testTweet[2], hashtag: testTweet[3]);
+                return newTweet;
+                
+            }
+            catch (IndexOutOfRangeException)
+            {
+                newTweet.From = "Invalid";
+                newTweet.To = "Invalid";
+                newTweet.Message = "Invalid";
+                newTweet.Hashtag = "Invalid";
+            }
+            return newTweet;
         }
     }
 }

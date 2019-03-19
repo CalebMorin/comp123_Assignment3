@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tweet;
+using Tweeting;
 using System.IO;
 using static System.Console;
 using System.Web.Script.Serialization;
@@ -21,27 +21,50 @@ namespace Program
     class TweetManager
     {
         //I managed to get the Tweet[] array here without the red underline
-        private static Tweet.Tweet[] tweets;
+        private static Tweet[] tweets;
         private static string fileName;
 
         static TweetManager()
         {
-
+            FileStream fileStream = new FileStream("tweets.txt", FileMode.Open, FileAccess.Read);
+            StreamReader streamReader = new StreamReader(fileStream);           
+            tweets = new Tweet[29];
+            string line = streamReader.ReadLine();
+            while(line != null)
+            {
+                for(int i=0; i<tweets.Length; i++)
+                {
+                    tweets[i] = Tweet.Parse(line);
+                }
+                line = streamReader.ReadLine();
+            }
         }
         //Displays all tweets
         public static void ShowAll()
         {
-
+            fileName = @"tweets.txt";
+            WriteLine("{0}", fileName);
         }
         //Displays all the tweets with the same tag
         public static void ShowAll(string hashtag)
         {
-
+            fileName = @"tweets.txt";
+            foreach (string line in File.ReadAllLines(".\tweets.txt"))
+            {
+                if (line.Contains(hashtag))
+                    WriteLine(line);
+            }
         }
         //Serialize the array of tweets and saves them to a file called tweets.json
         public static void ConvertToJson()
         {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
 
+            FileStream fileStream = new FileStream("tweets.json", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter streamWriter = new StreamWriter(fileStream);
+
+            Tweet[] allTweets = new Tweet[29];
+            //ETC ETC ETC
         }
     }
 }
