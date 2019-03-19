@@ -8,7 +8,7 @@ using static System.Console;
 
 namespace Group1_comp123_Assignment3
 {
-    class Tweets
+    class Tweet
     {
         //So I think the point of this program is to make an object for every tweet in the file
         //aderson sent us, save them in a json and read the json file back.
@@ -24,7 +24,11 @@ namespace Group1_comp123_Assignment3
 
         public Tweet(string from, string to, string message, string hashtag)
         {
-            //1.7 a. goes here. This line is (I think) supposed to make the tweet[] object exist. Which is why all the tweet[] have red underlines.
+            //1.7 a.
+            From = from;
+            To = to;
+            Message = message;
+            Hashtag = hashtag;
             //1.7 b:
             Id = currentId;
             //1.7 c:
@@ -32,52 +36,52 @@ namespace Group1_comp123_Assignment3
         }
         public override string ToString()
         {
-
+            string messagePart = Message.Substring(0, Message.Length);
+            string tweetString = String.Format("{0,-2}{1,-8}{2,-8}{3,-8}");
+            return tweetString;
         }
         public static Tweet Parse(string line)
         {
             //1.9 a:
-
-            //1.9 d:
+            Tweet testTweet = new Tweet("", "", "", "");
+            string[] tweet;
             try
             {
-                //1.9 b:
-                Tweet();
-                //1.9 c:
+                tweet = line.Split(new char[] { '\t' });
+                testTweet = new Tweet(from: tweet[0], to: tweet[1], message: tweet[2], hashtag: tweet[3]);
+                return testTweet;
             }
-            catch
+            catch(IndexOutOfRangeException error)
             {
-
+                testTweet.From = "Invalid";
+                testTweet.To = "Invalid";
+                testTweet.Message = "Invalid";
+                testTweet.Hashtag = "Invalid";
             }
+            return testTweet;
         }
     }
     class TweetManager
     {
-        private static Tweet[] tweets;//see comment for 1.7 a.
+        private static Tweet[] tweets;
         private static string fileName;
 
         static TweetManager()
         {
-            //2.3 a:
-            Tweet[] tweets = new Tweet[29];//I got the array size from the Tweets file Aderson gave us. I added the "this line is invalid" lines to the total.
-            //2.3 b:
-            string filename;
-            filename = "Tweets.txt";
-            if (File.Exists(filename))
+            FileStream fileStream = new FileStream(fileName);//Honestly not sure why this is wrong. I checked like 3 documentations.
+            StreamReader streamReader = new StreamReader(fileStream);
+            string i = streamReader.ReadLine();
+            tweets = new Tweet[5];
+            while (i != null)
             {
-                string[] lines = File.ReadAllLines(@"C:\Users\alpha\source\repos\Tweets");
+                for(int j=0; j< tweets.Length; j++)
+                {
+                    tweets[j] = Tweet.Parse(i);
+                }
+                i = streamReader.ReadLine();
             }
-            else
-            {
-                WriteLine("File does not exist.");
-            }
-            //2.3 c:
-            foreach (string element in Tweet[])//iv
-            {
-                string line;//i
-                line = //one line from the Tweet array; //ii
-                Parse(line);//iii
-            }
+            streamReader.Close();
+            fileStream.Close();
         }
         public static void ShowAll()
         {
