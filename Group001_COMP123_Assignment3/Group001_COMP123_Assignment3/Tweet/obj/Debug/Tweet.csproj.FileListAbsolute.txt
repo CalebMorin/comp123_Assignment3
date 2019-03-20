@@ -1,6 +1,0 @@
-D:\Centennial\COMP123\Group001_COMP123_Assignment3\Tweet\bin\Debug\Tweet.dll
-D:\Centennial\COMP123\Group001_COMP123_Assignment3\Tweet\bin\Debug\Tweet.pdb
-D:\Centennial\COMP123\Group001_COMP123_Assignment3\Tweet\obj\Debug\Tweet.csprojAssemblyReference.cache
-D:\Centennial\COMP123\Group001_COMP123_Assignment3\Tweet\obj\Debug\Tweet.csproj.CoreCompileInputs.cache
-D:\Centennial\COMP123\Group001_COMP123_Assignment3\Tweet\obj\Debug\Tweet.dll
-D:\Centennial\COMP123\Group001_COMP123_Assignment3\Tweet\obj\Debug\Tweet.pdb
