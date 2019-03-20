@@ -15,7 +15,7 @@ namespace Program
         //This is where we TEST our program
         static void Main(string[] args)
         {
-            TweetManager.ShowAll();
+            TweetManager.ConvertToJson();
             ReadKey();
         }
     }
@@ -64,11 +64,20 @@ namespace Program
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
 
-            FileStream fileStream = new FileStream("tweets.json", FileMode.OpenOrCreate, FileAccess.Write);
+            FileStream fileStream = new FileStream("D:/Centennial/COMP123/Group001_COMP123_Assignment3/tweets.json", FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter streamWriter = new StreamWriter(fileStream);
 
-            Tweet[] allTweets = new Tweet[29];
-            //ETC ETC ETC
+            List<string> allTweets = new List<string>();
+
+            foreach (string line in File.ReadAllLines("D:/Centennial/COMP123/Group001_COMP123_Assignment3/tweets.txt"))
+            {
+                allTweets.Add(line);
+            }
+
+            streamWriter.Write(serializer.Serialize(allTweets));
+
+            streamWriter.Close();
+            fileStream.Close();
         }
     }
 }
