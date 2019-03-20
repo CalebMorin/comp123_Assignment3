@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using static System.Console;
 using System.Runtime;
 
-/* Okay, so I was looking over your version and at the assignment, and I think he wants us to have the Tweet class and TweetManager class separated, where the TweetManager class
- * is with the Program class. Hopefully I was able to put it in a way to make it easy for you to read. (Formatting is not my forte)
- * So far, I've only reorganized the classes so that it fits the assignment requirements, I'm still working on the other parts. Ill push this for now though.
+/* Names: Michael Tran & Caleb Morin
+ * Course: COMP123-008
+ * Professor: Aderson Oliveira
+ * Date: March 20th, 2019
  */
 namespace Tweeting
 {
@@ -36,10 +37,10 @@ namespace Tweeting
         public override string ToString()
         {
             string messagePart = Message.Substring(0, Message.Length);
-            string tweetString = String.Format("{0,-2}{1,-8}{2,-8}{3,-8}");
+            string tweetString = "This is a part of the tweet:" + messagePart;
             return tweetString;
         }
-        //
+        //This takes a tweet, divides it into 4 and creates a new tweet
         public static Tweet Parse(string line)
         {
             Tweet newTweet = new Tweet("", "", "", "");
