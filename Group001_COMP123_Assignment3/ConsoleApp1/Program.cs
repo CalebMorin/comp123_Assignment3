@@ -15,7 +15,8 @@ namespace Program
         //This is where we TEST our program
         static void Main(string[] args)
         {
-
+            TweetManager.ShowAll();
+            ReadKey();
         }
     }
     class TweetManager
@@ -26,7 +27,7 @@ namespace Program
 
         static TweetManager()
         {
-            FileStream fileStream = new FileStream("tweets.txt", FileMode.Open, FileAccess.Read);
+            FileStream fileStream = new FileStream("D:/Centennial/COMP123/Group001_COMP123_Assignment3/tweets.txt", FileMode.Open, FileAccess.Read);
             StreamReader streamReader = new StreamReader(fileStream);           
             tweets = new Tweet[29];
             string line = streamReader.ReadLine();
@@ -43,13 +44,16 @@ namespace Program
         public static void ShowAll()
         {
             fileName = @"tweets.txt";
-            WriteLine("{0}", fileName);
+            foreach (string line in File.ReadAllLines("D:/Centennial/COMP123/Group001_COMP123_Assignment3/tweets.txt"))
+            {
+                WriteLine(line);
+            }
         }
         //Displays all the tweets with the same tag
         public static void ShowAll(string hashtag)
         {
             fileName = @"tweets.txt";
-            foreach (string line in File.ReadAllLines(".\tweets.txt"))
+            foreach (string line in File.ReadAllLines("D:/Centennial/COMP123/Group001_COMP123_Assignment3/tweets.txt"))
             {
                 if (line.Contains(hashtag))
                     WriteLine(line);

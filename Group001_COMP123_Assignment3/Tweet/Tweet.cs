@@ -35,8 +35,9 @@ namespace Tweeting
         //Overrides the original ToString() method to create our own
         public override string ToString()
         {
-            
-            return "";
+            string messagePart = Message.Substring(0, Message.Length);
+            string tweetString = String.Format("{0,-2}{1,-8}{2,-8}{3,-8}");
+            return tweetString;
         }
         //
         public static Tweet Parse(string line)

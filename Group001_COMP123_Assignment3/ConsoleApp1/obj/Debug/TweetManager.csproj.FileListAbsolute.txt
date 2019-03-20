@@ -1,0 +1,10 @@
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\obj\Debug\TweetManager.csprojAssemblyReference.cache
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\obj\Debug\TweetManager.csproj.CoreCompileInputs.cache
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\bin\Debug\Tweet.dll
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\bin\Debug\Tweet.pdb
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\obj\Debug\TweetManager.csproj.CopyComplete
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\Centennial\COMP123\Group001_COMP123_Assignment3\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
